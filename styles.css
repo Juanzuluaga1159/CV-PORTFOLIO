@@ -228,7 +228,7 @@ header::after {
 
 .hero-text h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -354,6 +354,11 @@ header::after {
   max-width: 1200px;
   margin: 140px auto;
   position: relative;
+  scroll-margin-top: 90px;
+}
+
+.contact {
+  scroll-margin-top: 90px;
 }
 
 .section-label {
@@ -751,7 +756,7 @@ footer p {
 
 @media (max-width: 600px) {
   nav ul { display: none; }
-  .hero-text h1 { font-size: 2.8rem; }
+  .hero-text h1 { font-size: 1.4rem; }
   .section-title { font-size: 1.8rem; }
   .slider-container { height: 320px; }
   .about-stats { grid-template-columns: 1fr 1fr; }
