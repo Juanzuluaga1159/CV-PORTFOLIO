@@ -18,13 +18,16 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="logo">JZ<span>.</span></div>
-    <ul>
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contacto</a></li>
+    <ul id="navMenu">
+      <li><a href="#about" onclick="closeMenu()">Sobre mí</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Habilidades</a></li>
+      <li><a href="#experience" onclick="closeMenu()">Experiencia</a></li>
+      <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contacto</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -46,7 +49,7 @@
           experiencias visuales atractivas y soluciones digitales efectivas.
         </p>
 
-        <div>
+        <div class="hero-buttons">
           <a href="#portfolio" class="btn">Ver Portfolio →</a>
           <a href="#contact" class="btn btn-outline">Contacto</a>
         </div>
@@ -279,6 +282,27 @@
 
 
   <script>
+    /* ── HAMBURGER ──────────────────────────────────────────── */
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      const btn  = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('navMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+    // Cerrar menú al tocar fuera
+    document.addEventListener('click', e => {
+      const menu = document.getElementById('navMenu');
+      const btn  = document.getElementById('hamburger');
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+      }
+    });
+
     /* ── CURSOR ─────────────────────────────────────────── */
     const dot  = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
