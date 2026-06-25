@@ -820,7 +820,7 @@ footer p {
   .btn-outline { margin-left: 0; }
 
   /* --- HERO TEXT --- */
-  .hero-text h1 { font-size: 1.3rem; }
+  .hero-text h1 { font-size: 1.2rem; }
   .section-title { font-size: 1.8rem; }
   .slider-container { height: 320px; }
   .about-stats { grid-template-columns: 1fr 1fr; }
