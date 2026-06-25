@@ -754,13 +754,93 @@ footer p {
   .next { right: 10px; }
 }
 
+/* Hamburger hidden on desktop */
+.hamburger { display: none; }
+
 @media (max-width: 600px) {
-  nav ul { display: none; }
+
+  /* --- NAV HAMBURGER --- */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(8,8,8,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    z-index: 499;
+  }
+  nav ul.open { display: flex; }
+  nav ul li a {
+    display: block;
+    padding: 14px 5%;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* --- HERO BUTTONS --- */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-outline { margin-left: 0; }
+
+  /* --- HERO TEXT --- */
   .hero-text h1 { font-size: 1.4rem; }
   .section-title { font-size: 1.8rem; }
   .slider-container { height: 320px; }
   .about-stats { grid-template-columns: 1fr 1fr; }
   footer { flex-direction: column; gap: 10px; text-align: center; }
+
+  /* --- CONTACT CARDS --- */
+  .contact-inner { padding: 28px 20px; }
+  .contact-item {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+  .contact-item a {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+  .contact-item .icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
